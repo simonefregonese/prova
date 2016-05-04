@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="incanevaApp">
+<head>
+    <meta charset="UTF-8">
+    <title>InCaneva Webapp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="scripts/app.js"></script>
+</head>
+<body ng-controller="main">
+
+    <div class="container">
+
+        <header class="row">
+            <div class="col-md-12" id="titolo">
+                <h2>Calendario Eventi</h2>
+            </div>
+        </header>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{year}}
+                        <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="#" ng-click="changeYear(2016)">2016</a> </li>
+                        <li><a href="#" ng-click="changeYear(2015)">2015</a> </li>
+                        <li><a href="#" ng-click="changeYear(2014)">2014</a> </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <nav class="row">
+
+            <div class="col-md-2" id="colonna">
+
+                <div class="row" class="riga">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(01)">Gennaio</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row" class="riga">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(02)">Febbraio</a> </h5>
+                    </div>
+                </div>
+                 <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(03)">Marzo</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(04)">Aprile</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(05)">Maggio</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(06)">Giugno</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(07)">Luglio</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(08)">Agosto</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(09)">Settembre</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(10)">Ottobre</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(11)">Novembre</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> <a href="#" ng-click="filterByDate(12)">Dicembre</a> </h5>
+                    </div>
+                </div>
+                <br>
+
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-1" id="spazio"></div>
+
+                <div class="row">
+
+                    <div class="col-md-8">
+
+                        <div ng-repeat="(key, el) in events" class="repetitor">
+
+                            <h3>{{el.post_title}}</h3>
+                            <h5>{{el.evcal_start_date}}</h5>
+                            <p><a href="#" ng-click="openModal(key)">Leggi altro...</a></p>
+                            <a ng-click="openModal(key)" target="_blank"> <img ng-src="{{el.post_thumbnail}}" class="img-responsive img-thumbnail"></a>
+                            <p>
+                                <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{el.permalink}}" target="_blank"> <img src="img/facebook.png" height="30" width="30"></a>
+                                <a ng-href="https://twitter.com/home?status={{el.permalink}}" target="_blank"><img src="img/twitter-bird-light-bgs.png" height="50" width="50"></a>
+                            </p>
+
+                            <hr>
+
+                        </div>
+
+
+                        <p>{{}}</p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    <footer class="row">
+        <div class="col-md-12">
+            <h6>Footer</h6>
+        </div>
+    </footer>
+
+    </div>
+
+
+    <div id="contentModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">{{modal.post_title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <img ng-src="{{modal.post_thumbnail}}" class="img-responsive">
+                    </p>
+                    <p ng-bind-html="modal.post_content"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

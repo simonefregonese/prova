@@ -1,0 +1,34 @@
+{
+  "name": "incaneva",
+  "homepage": "https://github.com/riccardonobile/diamondsharps",
+  "authors": [
+    "Simone Cragnolini",
+    "Simone Fregonese",
+    "Filippo Menis",
+    "Alessandro Modaffari"
+  ],
+  "description": "Web App calendario per eventi InCaneva",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "webapp",
+    "incaneva"
+  ],
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-moment": "^0.10.3",
+    "moment": "^2.12.0",
+    "angular": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3",
+    "angular-bootstrap": "^1.3.1"
+  }
+}

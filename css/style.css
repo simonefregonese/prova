@@ -1,0 +1,36 @@
+
+#riga a:hover {
+    background-color: blue;
+}
+
+#colonna {
+    border-right: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+}
+
+#pnl {
+    border-top: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.repetitor a:hover {
+
+    background-color: lightcyan;
+}
+
+#titolo{
+    background-color: #008fb2;
+    font-family: Tahoma;
+    color: #ffc500;
+    text-align: center;
+
+}
